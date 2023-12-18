@@ -1,7 +1,7 @@
 {
   "name": "rn-pw-app",
   "version": "1.0.0",
-  "main": "expo-router/entry",
+  "main": "index.js",
   "scripts": {
     "start": "expo start",
     "android": "expo run:android",
@@ -13,11 +13,12 @@
     "@react-navigation/native": "^6.1.9",
     "babel-plugin-inline-dotenv": "^1.7.0",
     "expo": "~49.0.15",
-    "expo-constants": "~14.4.2",
+    "expo-constants": "^14.4.2",
     "expo-linking": "~5.0.2",
     "expo-router": "^2.0.0",
     "expo-splash-screen": "~0.20.5",
     "expo-status-bar": "~1.6.0",
+    "formik": "^2.4.5",
     "react": "18.2.0",
     "react-dom": "18.2.0",
     "react-native": "0.72.6",
@@ -26,7 +27,8 @@
     "react-native-screens": "~3.22.0",
     "react-native-vector-icons": "^10.0.2",
     "react-native-web": "~0.19.6",
-    "react-redux": "^9.0.4"
+    "react-redux": "^9.0.4",
+    "yup": "^1.3.3"
   },
   "devDependencies": {
     "@babel/core": "^7.20.0",

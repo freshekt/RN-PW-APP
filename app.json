@@ -6,10 +6,8 @@
     "orientation": "portrait",
     "icon": "./assets/icon.png",
     "userInterfaceStyle": "dark",
-    "experiments": {
-      "tsconfigPaths": true,
-      "typedRoutes": true
-
+    "extra": {
+      "EXPO_ROUTER_APP_ROOT": "/src/screens"
     },
     "splash": {
       "image": "./assets/splash.png",
