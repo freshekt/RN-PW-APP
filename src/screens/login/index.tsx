@@ -1,8 +1,9 @@
 import * as React from 'react';
 import {Button, MD3LightTheme as DefaultTheme, PaperProvider, TextInput} from "react-native-paper";
-import {View} from "react-native";
-import {Formik, Form, Field, ErrorMessage} from 'formik';
+import { View} from "react-native";
+import {Formik, Form, ErrorMessage} from 'formik';
 import * as Yup from 'yup';
+import {theme} from "../_layout";
 
 const SignupSchema = Yup.object().shape({
     email: Yup.string()
@@ -14,23 +15,10 @@ const SignupSchema = Yup.object().shape({
         .required('Required'),
 });
 
-const theme = {
-    ...DefaultTheme,
-    dark: true,
-    colors: {
-        ...DefaultTheme.colors,
-        background: '#3c3c3c',
-        primary: '#222222',
-        secondary: '#cecece'
 
-    },
-    buttons: {
-        borderRadius: 10
-    }
-};
 export default function Login(): React.JSX.Element {
     return (
-        <PaperProvider theme={theme}>
+
             <View style={{
                 flex: 1,
                 alignItems: 'center',
@@ -49,12 +37,14 @@ export default function Login(): React.JSX.Element {
                         console.log(values);
                     }}
                 >{({handleChange, handleBlur, handleSubmit, values}) => (
-                    <View style={{width: 300}}>
+
+                    <Form style={{width: 300}}>
 
                             <View style={{paddingHorizontal: 32, marginBottom: 16, width: '100%'}}>
                                 <TextInput
                                     label="Email"
                                     value={values.email}
+                                    onChangeText={handleChange('email')}
                                 />
                                 <ErrorMessage name="email"/>
                             </View>
@@ -62,21 +52,20 @@ export default function Login(): React.JSX.Element {
                         <TextInput
                             label="Password"
                             value={values.password}
+                            onChangeText={handleChange('password')}
                             secureTextEntry={true}
                         />
                         <ErrorMessage name="password"/>
                 </View>
                 <View style={{paddingHorizontal: 32, marginBottom: 16, width: '100%'}}>
-                    <Button mode="contained" onPress={(e)=>handleSubmit(e.)}>
+                    <Button mode="contained" onPress={()=>handleSubmit()}>
                         Login
                     </Button>
                 </View>
 
-        </View>
+        </Form>
             )}
         </Formik>
 </View>
-</PaperProvider>
-)
-    ;
+);
 }
